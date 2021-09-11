@@ -43,14 +43,14 @@ class Allergy(models.Model):
 		db_table = 'allergy'
 
 class Nutrition(models.Model):
-	kcal = models.DecimalField(max_digits=5, decimal_places=1)
-	sodium = models.DecimalField(max_digits=5, decimal_places=1)
-	saturated = models.DecimalField(max_digits=5, decimal_places=1)
-	sugars = models.DecimalField(max_digits=5, decimal_places=1)
-	protein = models.DecimalField(max_digits=5, decimal_places=1)
-	caffeine = models.DecimalField(max_digits=5, decimal_places=1)
-	size_ml = models.IntegerField()
-	size_fl = models.IntegerField()
+	kcal = models.DecimalField(max_digits=5, decimal_places=1, null = True)
+	sodium = models.DecimalField(max_digits=5, decimal_places=1, null = True)
+	saturated = models.DecimalField(max_digits=5, decimal_places=1, null = True)
+	sugars = models.DecimalField(max_digits=5, decimal_places=1, null = True)
+	protein = models.DecimalField(max_digits=5, decimal_places=1, null = True)
+	caffeine = models.DecimalField(max_digits=5, decimal_places=1, null = True)
+	size_ml = models.IntegerField(null = True)
+	size_fl = models.IntegerField(null = True)
 	product = models.ForeignKey('Product', on_delete=models.CASCADE)
 
 	class Meta:
