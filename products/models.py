@@ -34,10 +34,11 @@ class Allergy_Product(models.Model):
 	product = models.ForeignKey('Product', on_delete=models.CASCADE)
 
 	class Meta:
-		db_table = 'allergy products'
+		db_table = 'allergy_products'
 
 class Allergy(models.Model):
 	name =  models.CharField(max_length=45)
+	n = models.ManyToManyField('Product', through = "Allergy_Product")
 
 	class Meta:
 		db_table = 'allergy'
